@@ -24,18 +24,18 @@ import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
-import static io.microsphere.alibaba.sentinel.alibaba.druid.Constants.PLUGIN_NAME;
+import static io.microsphere.alibaba.sentinel.alibaba.druid.SentinelAlibabaDruidConstants.PLUGIN_NAME;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
- * {@link SentinelDruidFilter} Testt
+ * {@link SentinelAlibabaDruidFilter} Testt
  *
  * @author <a href="mailto:mercyblitz@gmail.com">Mercy</a>
- * @see SentinelDruidFilter
+ * @see SentinelAlibabaDruidFilter
  * @see AbstractAlibabaDruidTest
  * @since 1.0.0
  */
-class SentinelDruidFilterTest extends AbstractAlibabaDruidTest {
+class SentinelAlibabaDruidFilterTest extends AbstractAlibabaDruidTest {
 
     @Test
     void testEnable() throws Throwable {
@@ -53,8 +53,8 @@ class SentinelDruidFilterTest extends AbstractAlibabaDruidTest {
         DruidDataSource dataSource = getDruidDataSource();
         List<Filter> proxyFilters = dataSource.getProxyFilters();
         for (Filter proxyFilter : proxyFilters) {
-            if (proxyFilter instanceof SentinelDruidFilter) {
-                SentinelDruidFilter filter = (SentinelDruidFilter) proxyFilter;
+            if (proxyFilter instanceof SentinelAlibabaDruidFilter) {
+                SentinelAlibabaDruidFilter filter = (SentinelAlibabaDruidFilter) proxyFilter;
                 assertEquals(PLUGIN_NAME, filter.getName());
                 filter.setEnabled(enabled);
             }
