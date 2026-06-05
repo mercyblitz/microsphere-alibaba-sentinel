@@ -20,6 +20,7 @@ package io.microsphere.alibaba.sentinel.spring.web;
 import io.microsphere.spring.test.web.context.request.MockServletWebRequest;
 import io.microsphere.spring.test.webmvc.AbstractWebMvcTest;
 import io.microsphere.spring.webmvc.annotation.EnableWebMvcExtension;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
@@ -55,6 +56,11 @@ class SentinelHandlerMethodInterceptorTest extends AbstractWebMvcTest {
     @Test
     void testConstants() {
         assertEquals("sentinelHandlerMethodInterceptor", BEAN_NAME);
+    }
+
+    @BeforeEach
+    public void setUp() {
+        super.setUp();
     }
 
     @Test
