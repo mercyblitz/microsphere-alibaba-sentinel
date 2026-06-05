@@ -15,19 +15,22 @@
  * limitations under the License.
  */
 
-package io.microsphere.alibaba.sentinel.common;
+package io.microsphere.alibaba.sentinel.jmx;
+
+import io.microsphere.alibaba.sentinel.common.SentinelPluginRepository;
+import io.microsphere.alibaba.sentinel.common.SentinelPluginRepositoryTest;
 
 /**
- * {@link SimpleSentinelPluginRepository}
+ * JMXSentinelPluginRepository
  *
  * @author <a href="mailto:mercyblitz@gmail.com">Mercy</a>
- * @see SimpleSentinelPluginRepository
+ * @see JMXSentinelPluginRepository
  * @since 1.0.0
  */
-class SimpleSentinelPluginRepositoryTest extends SentinelPluginRepositoryTest {
+class JMXSentinelPluginRepositoryTest extends SentinelPluginRepositoryTest {
 
     @Override
     protected SentinelPluginRepository createSentinelPluginRepository() {
-        return new SimpleSentinelPluginRepository();
+        return new JMXSentinelPluginRepository();
     }
 }
