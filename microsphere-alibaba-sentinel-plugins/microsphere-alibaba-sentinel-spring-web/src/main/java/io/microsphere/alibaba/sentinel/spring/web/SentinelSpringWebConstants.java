@@ -53,7 +53,7 @@ public interface SentinelSpringWebConstants {
      */
     @ConfigurationProperty(
             type = boolean.class,
-            defaultValue = "true",
+            defaultValue = ENABLED_PROPERTY_VALUE,
             source = {
                     SYSTEM_PROPERTIES_SOURCE,
                     APPLICATION_SOURCE

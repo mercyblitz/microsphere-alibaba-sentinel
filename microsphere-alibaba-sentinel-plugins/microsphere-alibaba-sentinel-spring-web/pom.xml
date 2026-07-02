@@ -48,6 +48,8 @@
             <optional>true</optional>
         </dependency>
 
+        <!-- Third-Party Dependencies -->
+
         <!-- Servlet API -->
         <dependency>
             <groupId>jakarta.servlet</groupId>
