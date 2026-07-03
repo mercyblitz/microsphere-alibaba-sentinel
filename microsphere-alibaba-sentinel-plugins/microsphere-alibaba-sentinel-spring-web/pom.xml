@@ -20,18 +20,18 @@
 
     <dependencies>
 
+        <!-- Microsphere Annotation Processor -->
+        <dependency>
+            <groupId>io.github.microsphere-projects</groupId>
+            <artifactId>microsphere-annotation-processor</artifactId>
+            <optional>true</optional>
+        </dependency>
+
         <!-- Microsphere Sentinel Commons -->
         <dependency>
             <groupId>io.github.microsphere-projects</groupId>
             <artifactId>microsphere-alibaba-sentinel-commons</artifactId>
             <version>${revision}</version>
-        </dependency>
-
-        <!-- Microsphere Spring Context -->
-        <dependency>
-            <groupId>io.github.microsphere-projects</groupId>
-            <artifactId>microsphere-spring-context</artifactId>
-            <optional>true</optional>
         </dependency>
 
         <!-- Microsphere Spring Web -->
@@ -41,20 +41,13 @@
             <optional>true</optional>
         </dependency>
 
-        <!-- Microsphere Annotation Processor -->
-        <dependency>
-            <groupId>io.github.microsphere-projects</groupId>
-            <artifactId>microsphere-annotation-processor</artifactId>
-            <optional>true</optional>
-        </dependency>
-
         <!-- Third-Party Dependencies -->
 
-        <!-- Servlet API -->
+        <!-- Alibaba Sentinel -->
         <dependency>
-            <groupId>jakarta.servlet</groupId>
-            <artifactId>jakarta.servlet-api</artifactId>
-            <scope>provided</scope>
+            <groupId>com.alibaba.csp</groupId>
+            <artifactId>sentinel-core</artifactId>
+            <optional>true</optional>
         </dependency>
 
         <!-- Spring WebMVC -->
@@ -64,11 +57,11 @@
             <optional>true</optional>
         </dependency>
 
-        <!-- Alibaba Sentinel -->
+        <!-- Servlet API -->
         <dependency>
-            <groupId>com.alibaba.csp</groupId>
-            <artifactId>sentinel-core</artifactId>
-            <optional>true</optional>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <scope>provided</scope>
         </dependency>
 
         <!-- Testing -->

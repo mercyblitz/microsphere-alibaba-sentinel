@@ -45,10 +45,12 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 /**
- * {@link SentinelAutoConfiguration} Test
+ * SentinelAutoConfiguration Test
  *
  * @author <a href="mailto:mercyblitz@gmail.com">Mercy</a>
- * @see SentinelAutoConfiguration
+ * @see SentinelAlibabaDruidAutoConfiguration
+ * @see SentinelMyBatisAutoConfiguration
+ * @see SentinelRedisAutoConfiguration
  * @since 1.0.0
  */
 @SpringJUnitConfig(classes = {

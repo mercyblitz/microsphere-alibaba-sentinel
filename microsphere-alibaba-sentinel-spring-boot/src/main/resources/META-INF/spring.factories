@@ -1,2 +1,4 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-io.microsphere.alibaba.sentinel.spring.boot.autoconfigure.SentinelAutoConfiguration
+io.microsphere.alibaba.sentinel.spring.boot.autoconfigure.SentinelAlibabaDruidAutoConfiguration,\
+io.microsphere.alibaba.sentinel.spring.boot.autoconfigure.SentinelMyBatisAutoConfiguration,\
+io.microsphere.alibaba.sentinel.spring.boot.autoconfigure.SentinelRedisAutoConfiguration
