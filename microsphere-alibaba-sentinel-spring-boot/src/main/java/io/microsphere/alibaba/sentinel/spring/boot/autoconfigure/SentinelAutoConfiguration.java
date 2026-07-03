@@ -2,7 +2,7 @@ package io.microsphere.alibaba.sentinel.spring.boot.autoconfigure;
 
 import io.microsphere.alibaba.sentinel.mybatis.SentinelMyBatisConstants;
 import io.microsphere.alibaba.sentinel.redis.SentinelRedisConstants;
-import io.microsphere.alibaba.sentinel.spring.boot.condition.ConditionalOnSentinelAvailiable;
+import io.microsphere.alibaba.sentinel.spring.boot.condition.ConditionalOnSentinelAvailable;
 import io.microsphere.mybatis.spring.annotation.EnableMyBatis;
 import io.microsphere.redis.spring.annotation.EnableRedisInterceptor;
 import org.springframework.boot.autoconfigure.AutoConfigureAfter;
@@ -17,7 +17,7 @@ import org.springframework.context.annotation.Import;
  * @see com.alibaba.cloud.sentinel.custom.SentinelAutoConfiguration
  * @since 1.0.0
  */
-@ConditionalOnSentinelAvailiable
+@ConditionalOnSentinelAvailable
 @AutoConfigureAfter(name = {
         "org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration",
         "org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration",

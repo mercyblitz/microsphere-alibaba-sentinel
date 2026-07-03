@@ -56,5 +56,5 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 @ConditionalOnClass(name = {
         "com.alibaba.csp.sentinel.SphU"
 })
-public @interface ConditionalOnSentinelAvailiable {
+public @interface ConditionalOnSentinelAvailable {
 }
