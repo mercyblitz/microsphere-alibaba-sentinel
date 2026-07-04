@@ -21,7 +21,6 @@ package io.microsphere.alibaba.sentinel.spring.boot.autoconfigure;
 import io.microsphere.alibaba.sentinel.mybatis.executor.SentinelMyBatisExecutorFilter;
 import io.microsphere.alibaba.sentinel.spring.boot.autoconfigure.SentinelMyBatisAutoConfiguration.Config;
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.FilteredClassLoader;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -65,23 +64,5 @@ class SentinelMyBatisAutoConfigurationTest extends AutoConfigurationTest<Sentine
                 SentinelMyBatisAutoConfiguration.class, Config.class, SentinelMyBatisExecutorFilter.class);
         assertFilteredClass("io.microsphere.alibaba.sentinel.mybatis.executor.SentinelMyBatisExecutorFilter",
                 SentinelMyBatisAutoConfiguration.class, Config.class, SentinelMyBatisExecutorFilter.class);
-    }
-
-    void assertDisabledProperty(String propertyValue, Class<?>... beanClasses) {
-        this.applicationContextRunner.withPropertyValues(propertyValue)
-                .run(context -> {
-                    for (Class<?> beanClass : beanClasses) {
-                        assertThat(context).doesNotHaveBean(beanClass);
-                    }
-                });
-    }
-
-    void assertFilteredClass(String filteredClass, Class<?>... beanClasses) {
-        this.applicationContextRunner.withClassLoader(new FilteredClassLoader(filteredClass))
-                .run(context -> {
-                    for (Class<?> beanClass : beanClasses) {
-                        assertThat(context).doesNotHaveBean(beanClass);
-                    }
-                });
     }
 }
