@@ -19,23 +19,25 @@ import static io.microsphere.alibaba.sentinel.redis.SentinelRedisConstants.ENABL
  *
  * @author <a href="mailto:mercyblitz@gmail.com">Mercy<a/>
  * @see com.alibaba.cloud.sentinel.custom.SentinelAutoConfiguration
- * @see org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration
  * @since 1.0.0
  */
 @ConditionalOnSentinelAvailable
 @ConditionalOnProperty(name = ENABLED_PROPERTY_NAME, matchIfMissing = true)
 @ConditionalOnClass(name = {
-        "io.microsphere.redis.spring.annotation.EnableRedisInterceptor",                  // Microsphere Redis Spring
-        "io.microsphere.alibaba.sentinel.redis.spring.SentinelRedisCommandInterceptor"    // Microsphere Alibaba Sentinel x Redis
+        "io.microsphere.spring.web.method.support.HandlerMethodInterceptor",              // Microsphere Spring Web
+        "io.microsphere.alibaba.sentinel.spring.web.SentinelHandlerMethodInterceptor"     // Microsphere Alibaba Sentinel x Spring Web
 })
 @AutoConfigureAfter(name = {
         "com.alibaba.cloud.sentinel.custom.SentinelAutoConfiguration",                    // Spring Cloud Alibaba Sentinel
-        "org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration",       // Spring Boot Redis
+        "org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration",     // Spring Boot WebMVC
+        "org.springframework.boot.webmvc.autoconfigure.WebMvcAutoConfiguration",          // Spring Boot 4.0+ WebMVC
+        "org.springframework.boot.autoconfigure.web.reactive.WebFluxAutoConfiguration",   // Spring Boot WebFlux
+        "org.springframework.boot.webflux.autoconfigure.WebFluxAutoConfiguration"         // Spring Boot 4.0+ WebFlux
 })
 @Import(value = {
-        SentinelRedisAutoConfiguration.Config.class,
+        SentinelWebAutoConfiguration.Config.class,
 })
-public class SentinelRedisAutoConfiguration {
+public class SentinelWebAutoConfiguration {
 
     @ConditionalOnRedisAvailable
     @ConditionalOnRedisInterceptorEnabled
