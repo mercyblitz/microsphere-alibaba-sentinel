@@ -32,7 +32,6 @@ import java.util.Optional;
 import static com.alibaba.csp.sentinel.EntryType.IN;
 import static com.alibaba.csp.sentinel.ResourceTypeConstants.COMMON_DB_SQL;
 import static io.microsphere.alibaba.sentinel.common.SentinelContext.doInContext;
-import static io.microsphere.alibaba.sentinel.common.SentinelPlugin.install;
 import static io.microsphere.alibaba.sentinel.hibernate.SentinelHibernateConstants.DEFAULT_CONTEXT_NAME;
 import static io.microsphere.alibaba.sentinel.hibernate.SentinelHibernateConstants.DEFAULT_ORIGIN;
 import static io.microsphere.alibaba.sentinel.hibernate.SentinelHibernateConstants.PLUGIN_NAME;
