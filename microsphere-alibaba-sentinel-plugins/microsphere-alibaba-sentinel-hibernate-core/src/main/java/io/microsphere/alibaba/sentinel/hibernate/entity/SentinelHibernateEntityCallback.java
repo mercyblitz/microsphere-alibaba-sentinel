@@ -58,9 +58,8 @@ public class SentinelHibernateEntityCallback implements EntityCallback, Sentinel
     }
 
     public SentinelHibernateEntityCallback(@Nonnull String contextName, @Nonnull String origin) {
-        this.delegate = new SimpleSentinelPlugin(PLUGIN_NAME, contextName, origin, COMMON_DB_SQL, IN, false);
+        this.delegate = new SimpleSentinelPlugin(PLUGIN_NAME, contextName, origin, COMMON_DB_SQL, IN, true);
         this.sentinelOperations = new SentinelTemplate(getResourceType(), getTrafficType());
-        install(this);
     }
 
     @Override
