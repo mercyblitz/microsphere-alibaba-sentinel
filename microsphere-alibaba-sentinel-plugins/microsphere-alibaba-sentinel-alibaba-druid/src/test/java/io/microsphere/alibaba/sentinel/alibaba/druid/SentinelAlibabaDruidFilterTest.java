@@ -75,7 +75,8 @@ class SentinelAlibabaDruidFilterTest extends AbstractAlibabaDruidTest {
         DruidDataSource dataSource = getDruidDataSource();
         List<Filter> proxyFilters = dataSource.getProxyFilters();
         for (Filter proxyFilter : proxyFilters) {
-            if (proxyFilter instanceof SentinelAlibabaDruidFilter filter) {
+            if (proxyFilter instanceof SentinelAlibabaDruidFilter) {
+                SentinelAlibabaDruidFilter filter = (SentinelAlibabaDruidFilter) proxyFilter;
                 assertEquals(PLUGIN_NAME, filter.getName());
                 filter.setEnabled(enabled);
             }
