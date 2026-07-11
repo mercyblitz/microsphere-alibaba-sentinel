@@ -20,6 +20,13 @@
 
     <dependencies>
 
+        <!-- Microsphere Annotation Processor -->
+        <dependency>
+            <groupId>io.github.microsphere-projects</groupId>
+            <artifactId>microsphere-annotation-processor</artifactId>
+            <optional>true</optional>
+        </dependency>
+
         <!-- Microsphere Sentinel Commons -->
         <dependency>
             <groupId>io.github.microsphere-projects</groupId>
@@ -34,12 +41,14 @@
             <optional>true</optional>
         </dependency>
 
-        <!-- Microsphere Annotation Processor -->
+        <!-- Microsphere Spring Context -->
         <dependency>
             <groupId>io.github.microsphere-projects</groupId>
-            <artifactId>microsphere-annotation-processor</artifactId>
+            <artifactId>microsphere-spring-context</artifactId>
             <optional>true</optional>
         </dependency>
+
+        <!-- Third-Party Dependencies -->
 
         <!-- Alibaba Sentinel -->
         <dependency>
@@ -73,6 +82,13 @@
         <dependency>
             <groupId>io.github.microsphere-projects</groupId>
             <artifactId>microsphere-spring-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- Microsphere Redis Spring Test -->
+        <dependency>
+            <groupId>io.github.microsphere-projects</groupId>
+            <artifactId>microsphere-redis-spring-test</artifactId>
             <scope>test</scope>
         </dependency>
 

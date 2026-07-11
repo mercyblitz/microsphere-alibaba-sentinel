@@ -20,13 +20,6 @@
 
     <dependencies>
 
-        <!-- Microsphere Sentinel Commons -->
-        <dependency>
-            <groupId>io.github.microsphere-projects</groupId>
-            <artifactId>microsphere-alibaba-sentinel-commons</artifactId>
-            <version>${revision}</version>
-        </dependency>
-
         <!-- Microsphere Annotation Processor -->
         <dependency>
             <groupId>io.github.microsphere-projects</groupId>
@@ -34,17 +27,27 @@
             <optional>true</optional>
         </dependency>
 
-        <!-- Alibaba Sentinel -->
+        <!-- Microsphere Sentinel Commons -->
         <dependency>
-            <groupId>com.alibaba.csp</groupId>
-            <artifactId>sentinel-core</artifactId>
-            <optional>true</optional>
+            <groupId>io.github.microsphere-projects</groupId>
+            <artifactId>microsphere-alibaba-sentinel-commons</artifactId>
+            <version>${revision}</version>
         </dependency>
 
         <!-- Microsphere MyBatis Core -->
         <dependency>
             <groupId>io.github.microsphere-projects</groupId>
             <artifactId>microsphere-mybatis-core</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+        <!-- Third-Party Dependencies -->
+
+        <!-- Alibaba Sentinel -->
+        <dependency>
+            <groupId>com.alibaba.csp</groupId>
+            <artifactId>sentinel-core</artifactId>
+            <optional>true</optional>
         </dependency>
 
         <!-- MyBatis -->

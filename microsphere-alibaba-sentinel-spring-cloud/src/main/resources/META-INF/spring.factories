@@ -1,0 +1,2 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+io.microsphere.alibaba.sentinel.spring.cloud.SentinelCloudAutoConfiguration

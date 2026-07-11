@@ -6,7 +6,7 @@
     <parent>
         <groupId>io.github.microsphere-projects</groupId>
         <artifactId>microsphere-spring-cloud-parent</artifactId>
-        <version>0.1.16</version>
+        <version>0.1.24</version>
     </parent>
 
     <groupId>io.github.microsphere-projects</groupId>
@@ -46,7 +46,7 @@
     </scm>
 
     <properties>
-        <revision>0.1.0-SNAPSHOT</revision>
+        <revision>0.1.1-SNAPSHOT</revision>
     </properties>
 
     <modules>
@@ -55,6 +55,7 @@
         <module>microsphere-alibaba-sentinel-plugins</module>
         <module>microsphere-alibaba-sentinel-spring</module>
         <module>microsphere-alibaba-sentinel-spring-boot</module>
+        <module>microsphere-alibaba-sentinel-spring-cloud</module>
         <module>microsphere-alibaba-sentinel-dependencies</module>
     </modules>
 
