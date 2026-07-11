@@ -17,7 +17,16 @@
 
 package io.microsphere.alibaba.sentinel.hibernate.entity;
 
+import com.alibaba.csp.sentinel.context.Context;
+import com.alibaba.csp.sentinel.node.DefaultNode;
 import io.microsphere.hibernate.test.AbstractHibernateH2Test;
+import org.junit.jupiter.api.AfterEach;
+
+import static com.alibaba.csp.sentinel.context.ContextUtil.enter;
+import static com.alibaba.csp.sentinel.context.ContextUtil.exit;
+import static io.microsphere.alibaba.sentinel.hibernate.SentinelHibernateConstants.DEFAULT_CONTEXT_NAME;
+import static io.microsphere.alibaba.sentinel.hibernate.SentinelHibernateConstants.DEFAULT_ORIGIN;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 /**
  * {@link SentinelHibernateEntityCallback} Test
@@ -27,4 +36,12 @@ import io.microsphere.hibernate.test.AbstractHibernateH2Test;
  * @since 1.0.0
  */
 class SentinelHibernateEntityCallbackTest extends AbstractHibernateH2Test {
+
+    @AfterEach
+    void postTest() {
+        Context context = enter(DEFAULT_CONTEXT_NAME, DEFAULT_ORIGIN);
+        DefaultNode entranceNode = context.getEntranceNode();
+        assertNotNull(entranceNode);
+        exit();
+    }
 }

@@ -16,37 +16,28 @@
  */
 package io.microsphere.alibaba.sentinel.spring.boot.condition;
 
-import io.microsphere.alibaba.sentinel.spring.boot.autoconfigure.SentinelAutoConfiguration;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
+import io.microsphere.alibaba.sentinel.spring.boot.autoconfigure.SentinelRedisAutoConfiguration;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.Retention;
 import java.lang.annotation.Target;
 
-import static io.microsphere.constants.PropertyConstants.ENABLED_PROPERTY_NAME;
+import static io.microsphere.alibaba.sentinel.common.constants.SentinelConstants.ENABLED_PROPERTY_NAME;
 import static java.lang.annotation.ElementType.METHOD;
 import static java.lang.annotation.ElementType.TYPE;
 import static java.lang.annotation.RetentionPolicy.RUNTIME;
 
 /**
- * Alibaba Sentinel Spring Boot Condition
+ * {@link ConditionalOnProperty} based annotation for Alibaba Sentinel enabled property.
  *
  * @author <a href="mailto:mercyblitz@gmail.com">Mercy<a/>
- * @see SentinelAutoConfiguration
+ * @see SentinelRedisAutoConfiguration
  * @since 1.0.0
  */
 @Retention(RUNTIME)
 @Target({TYPE, METHOD})
 @Documented
-@ConditionalOnProperty(prefix = ConditionalOnSentinelEnabled.PREFIX, name = ENABLED_PROPERTY_NAME, matchIfMissing = true)
-@ConditionalOnClass(name = {
-        "com.alibaba.csp.sentinel.SphU"
-})
+@ConditionalOnProperty(name = ENABLED_PROPERTY_NAME, matchIfMissing = true)
 public @interface ConditionalOnSentinelEnabled {
-
-    /**
-     * The property name prefix for Alibaba Sentinel : "microsphere.sentinel."
-     */
-    String PREFIX = "microsphere.sentinel.";
 }
