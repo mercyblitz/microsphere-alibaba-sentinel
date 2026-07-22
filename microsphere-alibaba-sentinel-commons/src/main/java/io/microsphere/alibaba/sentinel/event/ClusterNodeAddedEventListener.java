@@ -27,7 +27,6 @@ import io.microsphere.event.EventListener;
  * @see java.util.EventListener
  * @see ClusterNodeAddedEvent
  * @since 1.0.0
- * //
  */
 public interface ClusterNodeAddedEventListener extends EventListener<ClusterNodeAddedEvent> {
 }
