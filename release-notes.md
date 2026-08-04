@@ -47,4 +47,26 @@
 
 **Note:** For a detailed list of changes, refer to the full commit history.
 
-**Full Changelog**: https://github.com/microsphere-projects/microsphere-alibaba-sentinel/compare/...0.1.0
+**Full Changelog**: https://github.com/microsphere-projects/microsphere-alibaba-sentinel/compare/...0.1.0## v0.1.1
+
+_Release notes generation failed. Raw commits since 0.1.0:_
+
+```
+f555a82 Merge pull request #54 from microsphere-projects/dev-1.x
+f31d294 Merge pull request #53 from mercyblitz/dev-1.x
+f98e0e2 Bump fastjson to 2.0.63
+f874704 Merge pull request #52 from mercyblitz/dev-1.x
+9dec0fc Tidy POM test deps and add java-test
+29ed5c1 Use static field access in SentinelUtils
+b90559c Bump microsphere-redis to 0.1.13
+f592c04 Bump microsphere-hibernate to 0.1.9
+8a18a27 Bump microsphere-mybatis to 0.1.15
+5b975d3 Bump Alibaba Druid BOM to 0.1.20
+a0e361c Bump microsphere-spring-cloud to 0.1.25
+0764fb3 Update branch version matrix in README
+1747d2f Add Sentinel metrics and node event helpers
+016d0fe chore: merge release-1.x into dev-1.x [skip ci]
+e757cf2 chore: bump version to next patch after publishing 0.1.0
+```
+
+**Full Changelog**: https://github.com/microsphere-projects/microsphere-alibaba-sentinel/compare/0.1.0...0.1.1
