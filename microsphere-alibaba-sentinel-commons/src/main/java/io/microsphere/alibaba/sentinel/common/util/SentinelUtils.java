@@ -156,7 +156,7 @@ public abstract class SentinelUtils {
      * @see FlowRuleManager#SCHEDULER
      */
     public static ScheduledExecutorService findSentinelMetricsTaskExecutor() {
-        return getStaticFieldValue(FlowRuleManager.class, "SCHEDULER");
+        return getStaticFieldValue(true, FlowRuleManager.class, "SCHEDULER");
     }
 
     /**
