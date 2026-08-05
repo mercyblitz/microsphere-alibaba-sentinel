@@ -21,9 +21,9 @@ import com.alibaba.csp.sentinel.context.Context;
 import com.alibaba.csp.sentinel.node.DefaultNode;
 import com.alibaba.csp.sentinel.node.metric.MetricNode;
 import com.alibaba.csp.sentinel.node.metric.MetricSearcher;
-import com.alibaba.csp.sentinel.slotchain.ProcessorSlotEntryCallback;
 import com.alibaba.csp.sentinel.slotchain.ResourceWrapper;
 import com.alibaba.csp.sentinel.slots.block.BlockException;
+import io.microsphere.alibaba.sentinel.common.callback.DefaultNodeEntryCallback;
 import io.microsphere.annotation.Nonnull;
 import io.microsphere.annotation.Nullable;
 import io.microsphere.lang.function.ThrowableFunction;
@@ -52,11 +52,11 @@ import static java.util.Collections.unmodifiableMap;
  * The Repository of Alibaba Sentinel Metrics
  *
  * @author <a href="mailto:mercyblitz@gmail.com">Mercy</a>
- * @see ProcessorSlotEntryCallback
+ * @see DefaultNodeEntryCallback
  * @see DefaultNode
  * @since 1.0.0
  */
-public class SentinelMetricsRepository implements ProcessorSlotEntryCallback<DefaultNode> {
+public class SentinelMetricsRepository implements DefaultNodeEntryCallback {
 
     private static final Logger logger = getLogger(SentinelMetricsRepository.class);
 
