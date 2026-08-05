@@ -26,6 +26,7 @@ import com.alibaba.csp.sentinel.slots.block.BlockException;
 import com.alibaba.csp.sentinel.slots.clusterbuilder.ClusterBuilderSlot;
 import com.alibaba.csp.sentinel.slots.nodeselector.NodeSelectorSlot;
 import com.alibaba.csp.sentinel.slots.statistic.StatisticSlot;
+import com.alibaba.csp.sentinel.spi.Spi;
 import io.microsphere.alibaba.sentinel.common.callback.DefaultNodeEntryCallback;
 import io.microsphere.annotation.Nullable;
 import io.microsphere.event.EventDispatcher;
@@ -50,6 +51,7 @@ import static io.microsphere.event.EventDispatcher.of;
  * @see StatisticSlot
  * @since 1.0.0
  */
+@Spi
 public class SentinelNodeEventPublisher implements DefaultNodeEntryCallback {
 
     private final EventDispatcher eventDispatcher;

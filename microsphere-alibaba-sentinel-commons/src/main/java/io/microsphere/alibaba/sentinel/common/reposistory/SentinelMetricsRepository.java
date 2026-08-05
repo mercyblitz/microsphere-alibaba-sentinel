@@ -23,6 +23,7 @@ import com.alibaba.csp.sentinel.node.metric.MetricNode;
 import com.alibaba.csp.sentinel.node.metric.MetricSearcher;
 import com.alibaba.csp.sentinel.slotchain.ResourceWrapper;
 import com.alibaba.csp.sentinel.slots.block.BlockException;
+import com.alibaba.csp.sentinel.spi.Spi;
 import io.microsphere.alibaba.sentinel.common.callback.DefaultNodeEntryCallback;
 import io.microsphere.annotation.Nonnull;
 import io.microsphere.annotation.Nullable;
@@ -56,6 +57,7 @@ import static java.util.Collections.unmodifiableMap;
  * @see DefaultNode
  * @since 1.0.0
  */
+@Spi
 public class SentinelMetricsRepository implements DefaultNodeEntryCallback {
 
     private static final Logger logger = getLogger(SentinelMetricsRepository.class);
