@@ -33,10 +33,9 @@ import io.microsphere.event.EventDispatcher;
 import java.util.concurrent.ConcurrentMap;
 import java.util.concurrent.Executor;
 
-import static com.alibaba.csp.sentinel.slots.statistic.StatisticSlotCallbackRegistry.addEntryCallback;
+import static io.microsphere.alibaba.sentinel.common.util.ProcessorSlotCallbackUtils.getEntryCallback;
 import static io.microsphere.collection.MapUtils.newConcurrentHashMap;
-import static io.microsphere.event.EventDispatcher.newDefault;
-import static io.microsphere.event.EventDispatcher.parallel;
+import static io.microsphere.event.EventDispatcher.of;
 
 /**
  * The Event Publisher of Alibaba Sentinel's {@link Node}
@@ -65,8 +64,7 @@ public class SentinelNodeEventPublisher implements ProcessorSlotEntryCallback<De
     }
 
     public SentinelNodeEventPublisher(@Nullable Executor eventDispatcherExecutor) {
-        this.eventDispatcher = eventDispatcherExecutor == null ? newDefault() : parallel(eventDispatcherExecutor);
-        addEntryCallback(getClass().getName(), this);
+        this.eventDispatcher = of(eventDispatcherExecutor);
     }
 
     public SentinelNodeEventPublisher addEventListener(ClusterNodeAddedEventListener eventListener) {
@@ -105,5 +103,15 @@ public class SentinelNodeEventPublisher implements ProcessorSlotEntryCallback<De
 
     protected void onClusterNodeAdded(String contextName, String resourceName, ClusterNode clusterNode) {
         this.eventDispatcher.dispatch(new ClusterNodeAddedEvent(clusterNode, contextName, resourceName));
+    }
+
+    /**
+     * Get the singleton instance of {@link SentinelNodeEventPublisher}
+     *
+     * @return the singleton instance of {@link SentinelNodeEventPublisher}
+     */
+    @Nullable
+    public static SentinelNodeEventPublisher getSentinelNodeEventPublisher() {
+        return getEntryCallback(SentinelNodeEventPublisher.class);
     }
 }

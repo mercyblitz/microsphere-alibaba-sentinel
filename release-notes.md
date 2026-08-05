@@ -69,4 +69,19 @@ a0e361c Bump microsphere-spring-cloud to 0.1.25
 e757cf2 chore: bump version to next patch after publishing 0.1.0
 ```
 
-**Full Changelog**: https://github.com/microsphere-projects/microsphere-alibaba-sentinel/compare/0.1.0...0.1.1
+**Full Changelog**: https://github.com/microsphere-projects/microsphere-alibaba-sentinel/compare/0.1.0...0.1.1## v0.1.2
+
+_Release notes generation failed. Raw commits since 0.1.1:_
+
+```
+4314ba1 Update version numbers in README.md
+a6569b1 Merge pull request #55 from mercyblitz/dev-1.x
+16fecad Add callback accessors for Sentinel singletons
+ca7b969 Refactor Sentinel callback registration
+5229a98 Mark ClusterNodeAdded listener functional
+9b4cac9 Use EventDispatcher.of in node publisher
+97e60f3 chore: merge release-1.x into dev-1.x [skip ci]
+fb22619 chore: bump version to next patch after publishing 0.1.1
+```
+
+**Full Changelog**: https://github.com/microsphere-projects/microsphere-alibaba-sentinel/compare/0.1.1...0.1.2
