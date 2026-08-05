@@ -25,7 +25,10 @@ import org.junit.jupiter.api.Test;
 import java.util.concurrent.CountDownLatch;
 
 import static io.microsphere.alibaba.sentinel.common.constants.SentinelConstants.DEFAULT_CONTEXT_NAME;
+import static io.microsphere.alibaba.sentinel.common.util.ProcessorSlotCallbackUtils.addEntryCallback;
+import static io.microsphere.alibaba.sentinel.event.SentinelNodeEventPublisher.getSentinelNodeEventPublisher;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertSame;
 
 /**
  * {@link SentinelNodeEventPublisher} Test
@@ -41,6 +44,7 @@ class SentinelNodeEventPublisherTest extends AbstractSentinelTemplateTest {
     @BeforeEach
     void setUp() {
         this.sentinelNodeEventPublisher = new SentinelNodeEventPublisher();
+        addEntryCallback(this.sentinelNodeEventPublisher);
     }
 
     @Test
@@ -48,13 +52,10 @@ class SentinelNodeEventPublisherTest extends AbstractSentinelTemplateTest {
 
         CountDownLatch countDownLatch = new CountDownLatch(this.times);
 
-        ClusterNodeAddedEventListener listener = new ClusterNodeAddedEventListener() {
-            @Override
-            public void onEvent(ClusterNodeAddedEvent event) {
-                assertEquals(DEFAULT_CONTEXT_NAME, event.getContextName());
-                assertEquals(event.getResourceName(), event.getClusterNode().getName());
-                countDownLatch.countDown();
-            }
+        ClusterNodeAddedEventListener listener = event -> {
+            assertEquals(DEFAULT_CONTEXT_NAME, event.getContextName());
+            assertEquals(event.getResourceName(), event.getClusterNode().getName());
+            countDownLatch.countDown();
         };
 
         this.sentinelNodeEventPublisher.addEventListener(listener);
@@ -64,5 +65,7 @@ class SentinelNodeEventPublisherTest extends AbstractSentinelTemplateTest {
         countDownLatch.await();
 
         this.sentinelNodeEventPublisher.removeEventListener(listener);
+
+        assertSame(this.sentinelNodeEventPublisher, getSentinelNodeEventPublisher());
     }
 }
