@@ -84,4 +84,13 @@ ca7b969 Refactor Sentinel callback registration
 fb22619 chore: bump version to next patch after publishing 0.1.1
 ```
 
-**Full Changelog**: https://github.com/microsphere-projects/microsphere-alibaba-sentinel/compare/0.1.1...0.1.2
+**Full Changelog**: https://github.com/microsphere-projects/microsphere-alibaba-sentinel/compare/0.1.1...0.1.2## v0.1.3
+
+_Release notes generation failed. Raw commits since 0.1.2:_
+
+```
+e8e3c82 Update version numbers in README.md
+168b635 chore: bump version to next patch after publishing 0.1.2
+```
+
+**Full Changelog**: https://github.com/microsphere-projects/microsphere-alibaba-sentinel/compare/0.1.2...0.1.3
