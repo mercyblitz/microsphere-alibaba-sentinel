@@ -93,4 +93,19 @@ e8e3c82 Update version numbers in README.md
 168b635 chore: bump version to next patch after publishing 0.1.2
 ```
 
-**Full Changelog**: https://github.com/microsphere-projects/microsphere-alibaba-sentinel/compare/0.1.2...0.1.3
+**Full Changelog**: https://github.com/microsphere-projects/microsphere-alibaba-sentinel/compare/0.1.2...0.1.3## v0.1.4
+
+_Release notes generation failed. Raw commits since 0.1.3:_
+
+```
+068e5e0 Update version numbers in README.md
+1a2681d Update fastjson version to 2.0.64
+d12c188 Merge pull request #56 from mercyblitz/dev-1.x
+3d0c80f Merge branch 'microsphere-projects:dev-1.x' into dev-1.x
+22801f4 chore: merge release-1.x into dev-1.x [skip ci]
+0b8a964 chore: bump version to next patch after publishing 0.1.3
+18119c7 Auto-load Sentinel slot callbacks via SPI
+45677b8 chore: merge release-1.x into dev-1.x [skip ci]
+```
+
+**Full Changelog**: https://github.com/microsphere-projects/microsphere-alibaba-sentinel/compare/0.1.3...0.1.4
