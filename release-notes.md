@@ -108,4 +108,18 @@ d12c188 Merge pull request #56 from mercyblitz/dev-1.x
 45677b8 chore: merge release-1.x into dev-1.x [skip ci]
 ```
 
-**Full Changelog**: https://github.com/microsphere-projects/microsphere-alibaba-sentinel/compare/0.1.3...0.1.4
+**Full Changelog**: https://github.com/microsphere-projects/microsphere-alibaba-sentinel/compare/0.1.3...0.1.4## v0.1.5
+
+_Release notes generation failed. Raw commits since 0.1.4:_
+
+```
+749f1f9 Bump versions in README for branches
+16732e0 Merge pull request #59 from mercyblitz/dev-1.x
+2777bfd Bump microsphere-spring-cloud to 0.1.26
+8e77a37 Clarify Hibernate enabled property docs
+7d05be7 Add workflow to sync branches from upstream repository
+1736c54 chore: merge release-1.x into dev-1.x [skip ci]
+0319d30 chore: bump version to next patch after publishing 0.1.4
+```
+
+**Full Changelog**: https://github.com/microsphere-projects/microsphere-alibaba-sentinel/compare/0.1.4...0.1.5
